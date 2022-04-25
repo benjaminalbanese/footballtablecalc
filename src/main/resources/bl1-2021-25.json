@@ -1,0 +1,749 @@
+[
+  {
+    "matchID": 61061,
+    "matchDateTime": "2022-03-04T20:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-04T19:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 83,
+      "teamName": "Arminia Bielefeld",
+      "shortName": "Bielefeld",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Logo_mit_Rand.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 95,
+      "teamName": "FC Augsburg",
+      "shortName": "Augsburg",
+      "teamIconUrl": "https://i.imgur.com/sdE62e2.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-04T22:27:39.933",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97555,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97556,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93528,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 50,
+        "goalGetterID": 7963,
+        "goalGetterName": "D. Caligiuri",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  },
+  {
+    "matchID": 61062,
+    "matchDateTime": "2022-03-05T15:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-05T14:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 40,
+      "teamName": "FC Bayern München",
+      "shortName": "Bayern",
+      "teamIconUrl": "https://i.imgur.com/jJEsJrj.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 6,
+      "teamName": "Bayer Leverkusen",
+      "shortName": "Leverkusen",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/de/thumb/f/f7/Bayer_Leverkusen_Logo.svg/1200px-Bayer_Leverkusen_Logo.svg.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-05T17:24:54.13",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97565,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97566,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93554,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 18,
+        "goalGetterID": 18434,
+        "goalGetterName": "N. Süle",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93557,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 36,
+        "goalGetterID": 15523,
+        "goalGetterName": " T. Müller",
+        "isPenalty": false,
+        "isOwnGoal": true,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  },
+  {
+    "matchID": 61063,
+    "matchDateTime": "2022-03-05T15:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-05T14:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 129,
+      "teamName": "VfL Bochum",
+      "shortName": "Bochum",
+      "teamIconUrl": "https://i.imgur.com/5jy3Gfr.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 115,
+      "teamName": "SpVgg Greuther Fürth",
+      "shortName": "Fürth",
+      "teamIconUrl": "https://i.imgur.com/pwuVbKr.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-05T17:24:54.987",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97567,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 2,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97568,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93556,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 35,
+        "goalGetterID": 16862,
+        "goalGetterName": "Leitsch",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93564,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 64,
+        "goalGetterID": 18386,
+        "goalGetterName": "A. Bella-Kotchap",
+        "isPenalty": false,
+        "isOwnGoal": true,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93565,
+        "scoreTeam1": 2,
+        "scoreTeam2": 1,
+        "matchMinute": 71,
+        "goalGetterID": 18406,
+        "goalGetterName": "A. Losilla",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  },
+  {
+    "matchID": 61064,
+    "matchDateTime": "2022-03-05T15:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-05T14:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 54,
+      "teamName": "Hertha BSC",
+      "shortName": "Hertha",
+      "teamIconUrl": "https://i.imgur.com/apFwbYZ.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 91,
+      "teamName": "Eintracht Frankfurt",
+      "shortName": "Frankfurt",
+      "teamIconUrl": "https://i.imgur.com/X8NFkOb.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-05T17:24:56.94",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97569,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 4,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97570,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93553,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 17,
+        "goalGetterID": 18704,
+        "goalGetterName": "A. Knauff",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93559,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": 48,
+        "goalGetterID": 18701,
+        "goalGetterName": "Tuta",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93561,
+        "scoreTeam1": 0,
+        "scoreTeam2": 3,
+        "matchMinute": 56,
+        "goalGetterID": 19157,
+        "goalGetterName": "J. Lindstrøm",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93562,
+        "scoreTeam1": 1,
+        "scoreTeam2": 3,
+        "matchMinute": 62,
+        "goalGetterID": 18521,
+        "goalGetterName": "D. Selke",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93563,
+        "scoreTeam1": 1,
+        "scoreTeam2": 4,
+        "matchMinute": 63,
+        "goalGetterID": 19151,
+        "goalGetterName": "R. Borre",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  },
+  {
+    "matchID": 61067,
+    "matchDateTime": "2022-03-05T15:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-05T14:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 1635,
+      "teamName": "RB Leipzig",
+      "shortName": "Leipzig",
+      "teamIconUrl": "https://i.imgur.com/Rpwsjz1.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 112,
+      "teamName": "SC Freiburg",
+      "shortName": "Freiburg",
+      "teamIconUrl": "https://i.imgur.com/r3mvi0h.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-05T17:24:57.72",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97563,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97564,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93558,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 38,
+        "goalGetterID": 18339,
+        "goalGetterName": "E. Demirovic",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93566,
+        "scoreTeam1": 1,
+        "scoreTeam2": 1,
+        "matchMinute": 90,
+        "goalGetterID": 17949,
+        "goalGetterName": "Angelino",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  },
+  {
+    "matchID": 61069,
+    "matchDateTime": "2022-03-05T15:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-05T14:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 131,
+      "teamName": "VfL Wolfsburg",
+      "shortName": "Wolfsburg",
+      "teamIconUrl": "https://i.imgur.com/ucqKV4B.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 80,
+      "teamName": "1. FC Union Berlin",
+      "shortName": "Union Berlin",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/FCU_Standard_Logo.png/240px-FCU_Standard_Logo.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-05T17:24:59.113",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97571,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97572,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93555,
+        "scoreTeam1": 1,
+        "scoreTeam2": 0,
+        "matchMinute": 25,
+        "goalGetterID": 18412,
+        "goalGetterName": "T. Awoniyi",
+        "isPenalty": false,
+        "isOwnGoal": true,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  },
+  {
+    "matchID": 61068,
+    "matchDateTime": "2022-03-05T18:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-05T17:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 16,
+      "teamName": "VfB Stuttgart",
+      "shortName": "Stuttgart",
+      "teamIconUrl": "https://i.imgur.com/v0tkpNx.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 87,
+      "teamName": "Borussia Mönchengladbach",
+      "shortName": "Gladbach",
+      "teamIconUrl": "https://i.imgur.com/KSIk0Eu.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-05T20:22:55.68",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97599,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 3,
+        "pointsTeam2": 2,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97600,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 1,
+        "pointsTeam2": 2,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93609,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 14,
+        "goalGetterID": 18574,
+        "goalGetterName": "A. Plea",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93610,
+        "scoreTeam1": 0,
+        "scoreTeam2": 2,
+        "matchMinute": 35,
+        "goalGetterID": 18573,
+        "goalGetterName": "M. Thuram",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93611,
+        "scoreTeam1": 1,
+        "scoreTeam2": 2,
+        "matchMinute": 39,
+        "goalGetterID": 18630,
+        "goalGetterName": "W. Endo",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93612,
+        "scoreTeam1": 2,
+        "scoreTeam2": 2,
+        "matchMinute": 51,
+        "goalGetterID": 18304,
+        "goalGetterName": "C. Führich",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      },
+      {
+        "goalID": 93613,
+        "scoreTeam1": 3,
+        "scoreTeam2": 2,
+        "matchMinute": 83,
+        "goalGetterID": 18381,
+        "goalGetterName": "S. Kalajdzic",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  },
+  {
+    "matchID": 61065,
+    "matchDateTime": "2022-03-06T17:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-06T16:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 65,
+      "teamName": "1. FC Köln",
+      "shortName": "Köln",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/FC_Cologne_logo.svg/1200px-FC_Cologne_logo.svg.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 175,
+      "teamName": "TSG 1899 Hoffenheim",
+      "shortName": "Hoffenheim",
+      "teamIconUrl": "https://i.imgur.com/gF0PfEl.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-06T19:24:01.16",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97609,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97610,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93624,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 62,
+        "goalGetterID": 19109,
+        "goalGetterName": "S. Posch",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  },
+  {
+    "matchID": 61066,
+    "matchDateTime": "2022-03-16T18:30:00",
+    "timeZoneID": "W. Europe Standard Time",
+    "leagueId": 4500,
+    "leagueName": "1. Fußball-Bundesliga 2021/2022",
+    "leagueSeason": 2021,
+    "leagueShortcut": "bl1",
+    "matchDateTimeUTC": "2022-03-16T17:30:00Z",
+    "group": {
+      "groupName": "25. Spieltag",
+      "groupOrderID": 25,
+      "groupID": 38201
+    },
+    "team1": {
+      "teamId": 81,
+      "teamName": "1. FSV Mainz 05",
+      "shortName": "Mainz",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Logo_Mainz_05.svg/1200px-Logo_Mainz_05.svg.png",
+      "teamGroupName": null
+    },
+    "team2": {
+      "teamId": 7,
+      "teamName": "Borussia Dortmund",
+      "shortName": "BVB",
+      "teamIconUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/560px-Borussia_Dortmund_logo.svg.png",
+      "teamGroupName": null
+    },
+    "lastUpdateDateTime": "2022-03-16T20:29:03.407",
+    "matchIsFinished": true,
+    "matchResults": [
+      {
+        "resultID": 97701,
+        "resultName": "Endergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 1,
+        "resultOrderID": 1,
+        "resultTypeID": 2,
+        "resultDescription": "Ergebnis nach Ende der offiziellen Spielzeit"
+      },
+      {
+        "resultID": 97702,
+        "resultName": "Halbzeitergebnis",
+        "pointsTeam1": 0,
+        "pointsTeam2": 0,
+        "resultOrderID": 2,
+        "resultTypeID": 1,
+        "resultDescription": null
+      }
+    ],
+    "goals": [
+      {
+        "goalID": 93758,
+        "scoreTeam1": 0,
+        "scoreTeam2": 1,
+        "matchMinute": 87,
+        "goalGetterID": 19285,
+        "goalGetterName": "A. Witsel",
+        "isPenalty": false,
+        "isOwnGoal": false,
+        "isOvertime": false,
+        "comment": null
+      }
+    ],
+    "location": null,
+    "numberOfViewers": null
+  }
+]
