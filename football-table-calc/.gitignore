@@ -1,45 +1,9 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# eclipse project files and directories
-.classpath
-.project
-.settings
-.recommenders
-.metadata
-
-# exclude IntelliJ IDEA files
-.idea
-**/*.iml
-workspace.xml
-
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
 /dist
 /tmp
 /out-tsc
-**/target/*
 # Only exists if Bazel was run
 /bazel-out
 
@@ -50,8 +14,12 @@ workspace.xml
 chrome-profiler-events*.json
 
 # IDEs and editors
+/.idea
+.project
+.classpath
 .c9/
 *.launch
+.settings/
 *.sublime-workspace
 
 # IDE - VSCode
