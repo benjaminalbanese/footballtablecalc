@@ -1,0 +1,16 @@
+<h2>Fetched clubs</h2>
+<div class="clubs">
+  <div class="club" *ngFor="let club of clubs">
+    <img class="teamIcon" src={{club.teamIconUrl}}/>
+    <span>{{club.shortName}}(id: {{club.teamId}})</span>
+  </div>
+</div>
+
+<div class="leagueTable">
+  <div class="tableEntry" *ngFor="let tableEentry of tableEntries">
+    <div style="order:1">{{tableEentry.club.shortName}}</div>
+    <div style="order:2">{{tableEentry.scored}}</div>
+    <div style="order:3">{{tableEentry.received}}</div>
+    <div style="order:4">{{tableEentry.points}}</div>
+  </div>
+</div>

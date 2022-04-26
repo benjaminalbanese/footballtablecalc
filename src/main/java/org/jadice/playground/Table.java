@@ -32,6 +32,9 @@ public class Table {
             tableEntries.add(new TableEntry(club));
         }
     }
+    public ArrayList<TableEntry> getTableEntries(){
+      return tableEntries;
+    }
 
 
     public void calcFromMatches(List<Match> matches) {

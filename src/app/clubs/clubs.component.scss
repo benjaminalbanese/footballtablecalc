@@ -1,0 +1,18 @@
+img.teamIcon{
+  width: 32px;
+  height: 32px;
+  margin-inline: 16px;
+}
+
+div.club, div.clubs{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+div.tableEntry{
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  justify-content: flex-end;
+}
