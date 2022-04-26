@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Club} from '../club/club';
 import {ClubService} from "./club.service";
 import {TableEntry} from "../tableEntry/tableEntry";
+import {Probability} from "../probability/probability";
 
 @Component({
   selector: 'app-clubs',
@@ -12,6 +13,7 @@ export class ClubsComponent implements OnInit {
 
   clubs: Club[] = [];
   tableEntries: TableEntry[] = [];
+  probabilities: Probability[] = [];
 
 
   constructor(private clubService: ClubService) {
@@ -26,8 +28,11 @@ export class ClubsComponent implements OnInit {
         this.clubs = fetchedClubs;
 
         console.log(fetchedClubs)
+        this.clubService.getProbabilities('FC Schalke 04').subscribe(fetchedProbabilities => {
+          this.probabilities = fetchedProbabilities
+          console.log(fetchedProbabilities);
+        });
       });
-
     })
   }
 }

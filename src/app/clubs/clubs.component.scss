@@ -1,6 +1,6 @@
 img.teamIcon{
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   margin-inline: 16px;
 }
 
@@ -15,4 +15,9 @@ div.tableEntry{
   align-items: center;
   column-gap: 30px;
   justify-content: flex-end;
+}
+
+.probabilities{
+  display: flex;
+  column-gap: 30px;
 }

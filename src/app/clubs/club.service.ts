@@ -3,6 +3,7 @@ import {catchError, Observable, of, tap} from "rxjs";
 import {Club} from "../club/club";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {TableEntry} from "../tableEntry/tableEntry";
+import {Probability} from "../probability/probability";
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,15 @@ export class ClubService {
     return this.http.get<Club[]>(this.apiUrl + '/getClubList').pipe(
       tap(_ => console.log('fetched clubs')),
       catchError(this.handleError<Club[]>('getClubs', [])
-      ))
+      ));
+  }
+
+  getProbabilities(clubName : string): Observable<Probability[]> {
+    console.log('ClubService: fetching probabilites');
+    return this.http.get<Probability[]>(this.apiUrl+ '/finishRemainingRandomly?club=' + clubName).pipe(
+      tap(_ => console.log('fetched proabilities')),
+      catchError(this.handleError<Probability[]>('getProbabiliies()', [])
+      ));
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

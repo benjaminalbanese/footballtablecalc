@@ -122,8 +122,8 @@ public class ClubController {
     matches.clear();
 
     try {
-      matches.addAll(Arrays.asList((Match[]) getFromUrl("https://api.openligadb.de/getmatchdata/bl1/2021", Match[].class)));
-      clubs.addClubs(Arrays.asList((Club[]) getFromUrl("https://api.openligadb.de/getavailableteams/bl1/2021", Club[].class)));
+      matches.addAll(Arrays.asList((Match[]) getFromUrl("https://api.openligadb.de/getmatchdata/bl2/2021", Match[].class)));
+      clubs.addClubs(Arrays.asList((Club[]) getFromUrl("https://api.openligadb.de/getavailableteams/bl2/2021", Club[].class)));
       for (Club club : clubs.getClubs()) {
         long id = club.getTeamId();
         if (id >= counter.get()) {
@@ -152,7 +152,7 @@ public class ClubController {
 
   @SuppressWarnings("rawtypes")
   @RequestMapping("/setMatch")
-  public ResponseEntity setMatch(@RequestParam String home, @RequestParam String away) {
+  public ResponseEntity<ArrayList<Probability>> setMatch(@RequestParam String home, @RequestParam String away) {
     Optional<Match> first = matches.stream().filter(m -> m.getTeam1().getTeamName().equals(home) && m.getTeam2().getTeamName().equals(away)).findFirst();
     if (!first.isPresent())
       return new ResponseEntity<>(NOT_FOUND);
@@ -203,9 +203,13 @@ public class ClubController {
     }
     Timer timer = timer("org.jadice.randomTable");
     sample.stop(timer);
-    places.forEach((k, v) -> System.out.printf("place %d, count %d", k, v));
+    ArrayList<Probability> probabilities = new ArrayList<>();
+    places.forEach((k, v) -> {
+      System.out.printf("place %d, count %d", k, v);
+      probabilities.add(new Probability(k,v));
+    });
 
-    return new ResponseEntity<>(gson.toJson(places), OK);
+    return new ResponseEntity<>(gson.toJson(probabilities), OK);
   }
 }
 
