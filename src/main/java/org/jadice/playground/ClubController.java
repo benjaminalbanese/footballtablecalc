@@ -122,8 +122,8 @@ public class ClubController {
     matches.clear();
 
     try {
-      matches.addAll(Arrays.asList((Match[]) getFromUrl("https://api.openligadb.de/getmatchdata/bl2/2021", Match[].class)));
-      clubs.addClubs(Arrays.asList((Club[]) getFromUrl("https://api.openligadb.de/getavailableteams/bl2/2021", Club[].class)));
+      matches.addAll(Arrays.asList((Match[]) getFromUrl("https://api.openligadb.de/getmatchdata/bl1/2021", Match[].class)));
+      clubs.addClubs(Arrays.asList((Club[]) getFromUrl("https://api.openligadb.de/getavailableteams/bl1/2021", Club[].class)));
       for (Club club : clubs.getClubs()) {
         long id = club.getTeamId();
         if (id >= counter.get()) {
@@ -152,7 +152,7 @@ public class ClubController {
 
   @SuppressWarnings("rawtypes")
   @RequestMapping("/setMatch")
-  public ResponseEntity<ArrayList<Probability>> setMatch(@RequestParam String home, @RequestParam String away) {
+  public ResponseEntity<ArrayList<ClubPlace>> setMatch(@RequestParam String home, @RequestParam String away) {
     Optional<Match> first = matches.stream().filter(m -> m.getTeam1().getTeamName().equals(home) && m.getTeam2().getTeamName().equals(away)).findFirst();
     if (!first.isPresent())
       return new ResponseEntity<>(NOT_FOUND);
@@ -169,11 +169,15 @@ public class ClubController {
 
   @SuppressWarnings("rawtypes")
   @RequestMapping("/finishRemainingRandomly")
-  public ResponseEntity finishRemainingRandomly(@RequestParam String club) {
+  public ResponseEntity finishRemainingRandomly() {
 
     Sample sample = Timer.start();
     populateList();
-    HashMap<Integer, Integer> places = new HashMap<>();
+
+    HashMap<String, HashMap<Integer, Integer>> places = new HashMap<>();
+    for (Club clubsClub : clubs.getClubs()) {
+      places.put(clubsClub.getTeamName(), new HashMap<>());
+    }
 
     ArrayList<Match> remaining = new ArrayList<>();
     for (Match match : matches) {
@@ -190,26 +194,34 @@ public class ClubController {
     }
 
     Table randomTable;
-    for (int i = 0; i < 1000000; i++) {
+    for (int i = 0; i < 100000; i++) {
       randomTable = new Table(table);
       randomTable.finishRandom(remaining);
       randomTable.sortEntries();
-      int index = randomTable.getPlace(club);
+      for (Club club : clubs.getClubs()) {
+        int index = randomTable.getPlace(club.getTeamName());
+        HashMap<Integer, Integer> clubPlaces = places.get(club.getTeamName());
 
-      places.merge(index, 1, Integer::sum);
-      if (i % 1000 == 0) {
-        currentRandomCount.set(i);
+        clubPlaces.merge(index, 1, Integer::sum);
+        if (i % 1000 == 0) {
+          currentRandomCount.set(i);
+        }
+
       }
     }
     Timer timer = timer("org.jadice.randomTable");
     sample.stop(timer);
-    ArrayList<Probability> probabilities = new ArrayList<>();
+    ArrayList<ClubPlace> returnValue = new ArrayList<>();
     places.forEach((k, v) -> {
-      System.out.printf("place %d, count %d", k, v);
-      probabilities.add(new Probability(k,v));
+      System.out.println("Club: " + k);
+
+      v.forEach((pk, pv) -> {
+        System.out.printf("place %d, count %d\n", pk, pv);
+        returnValue.add(new ClubPlace(k, pk, pv));
+      });
     });
 
-    return new ResponseEntity<>(gson.toJson(probabilities), OK);
+    return new ResponseEntity<>(gson.toJson(returnValue), OK);
   }
 }
 

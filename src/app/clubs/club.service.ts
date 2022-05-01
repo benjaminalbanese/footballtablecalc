@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {catchError, Observable, of, tap} from "rxjs";
 import {Club} from "../club/club";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {TableEntry} from "../tableEntry/tableEntry";
-import {Probability} from "../probability/probability";
+import {ClubPlace} from "../probability/clubPlace";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,6 @@ import {Probability} from "../probability/probability";
 export class ClubService {
 
   private apiUrl = 'http://localhost:8080'
-  private httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
   constructor(private http: HttpClient) {
   }
@@ -31,11 +30,11 @@ export class ClubService {
       ));
   }
 
-  getProbabilities(clubName : string): Observable<Probability[]> {
+  getProbabilities(): Observable<ClubPlace[]> {
     console.log('ClubService: fetching probabilites');
-    return this.http.get<Probability[]>(this.apiUrl+ '/finishRemainingRandomly?club=' + clubName).pipe(
+    return this.http.get<ClubPlace[]>(this.apiUrl + '/finishRemainingRandomly').pipe(
       tap(_ => console.log('fetched proabilities')),
-      catchError(this.handleError<Probability[]>('getProbabiliies()', [])
+      catchError(this.handleError<ClubPlace[]>('getProbabiliies()', [])
       ));
   }
 

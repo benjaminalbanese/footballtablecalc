@@ -16,7 +16,8 @@
 </div>
 <h3>Probabilites</h3>
 <div class="probabilities" *ngFor="let probability of probabilities">
+  <span style="order: 1">{{probability.club}}</span>
   <span style="order: 1">{{probability.place}}</span>
-  <span style="order: 2">{{probability.count}}</span>
+  <span style="order: 1">{{probability.count}}</span>
 </div>
 

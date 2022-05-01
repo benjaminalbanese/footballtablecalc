@@ -5,7 +5,8 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Probability {
+public class ClubPlace {
+  private String club;
   private int place;
   private int count;
 }
