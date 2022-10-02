@@ -4,6 +4,7 @@ import {Club} from "../club/club";
 import {HttpClient} from "@angular/common/http";
 import {TableEntry} from "../tableEntry/tableEntry";
 import {ClubPlace} from "../probability/clubPlace";
+import {Season} from "../club/Season";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,14 @@ export class ClubService {
       tap(_ => console.log('fetched clubs')),
       catchError(this.handleError<Club[]>('getClubs', [])
       ));
+  }
+
+  getSeasons(): Observable<Season[]> {
+    console.log('ClubService: fetching seasons');
+    return this.http.get<Season[]>(this.apiUrl + '/getSeasons').pipe(
+      tap((_ => console.log('fetched seasons'))),
+      catchError(this.handleError<Season[]>('getSeasons', []))
+    );
   }
 
   getProbabilities(): Observable<ClubPlace[]> {

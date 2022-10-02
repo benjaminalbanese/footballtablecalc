@@ -24,14 +24,17 @@ export class ClubsComponent implements OnInit {
     this.clubService.populateList().subscribe(fetchedTableEntries => {
       console.log(fetchedTableEntries);
       this.tableEntries = fetchedTableEntries;
+      this.clubService.getSeasons().subscribe(fetchedSeasons => {
+        console.log(fetchedSeasons)
+      });
       this.clubService.getClubs().subscribe(fetchedClubs => {
         this.clubs = fetchedClubs;
 
         console.log(fetchedClubs)
         this.clubService.getProbabilities().subscribe(fetchedProbabilities => {
           this.probabilities = fetchedProbabilities;
-          fetchedProbabilities.sort((a,b) => {
-            if (a.place -b.place != 0)
+          fetchedProbabilities.sort((a, b) => {
+            if (a.place - b.place != 0)
               return a.place - b.place;
             else
               return b.count - a.count;

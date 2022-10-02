@@ -12,9 +12,16 @@ div.club, div.clubs{
 
 div.tableEntry{
   display: flex;
-  align-items: center;
-  column-gap: 30px;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  column-gap: 15px;
+}
+
+div.tableEntry>div:first-child{
+  min-width: 150px;
+}
+
+div.tableEntry>div{
+
 }
 
 .probabilities{

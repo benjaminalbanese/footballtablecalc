@@ -16,7 +16,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -72,6 +75,7 @@ public class ClubController {
     }
   }
 
+
   @DeleteMapping("/deleteClub")
   public ResponseEntity<Club> deleteClub(@RequestBody Club club) {
     return new ResponseEntity<>(clubs.deleteClub(club) ? OK : NOT_FOUND);
@@ -114,6 +118,21 @@ public class ClubController {
     return (Object[]) gson.fromJson(content, clazz);
   }
 
+  @RequestMapping("/getSeasons")
+  public ResponseEntity<List<SeasonOpenLigaDB>> getSeasons() {
+    List<SeasonOpenLigaDB> retrievedSeasons;
+    try {
+      List<SeasonOpenLigaDB> fullList = Arrays.asList((SeasonOpenLigaDB[]) getFromUrl(
+        "https://api.openligadb.de/getavailableleagues", SeasonOpenLigaDB[].class));
+      retrievedSeasons = fullList.stream().filter(s -> s.getLeagueShortcut().equals("bl1"))
+        .sorted(Comparator.comparing(SeasonOpenLigaDB::getLeagueSeason)).toList();
+    } catch (IOException e) {
+      return new ResponseEntity<>(new ArrayList<>(), INTERNAL_SERVER_ERROR);
+    }
+    return new ResponseEntity<>(retrievedSeasons, OK);
+  }
+
+
   @RequestMapping("/populateList")
   public ResponseEntity<ArrayList<TableEntry>> populateList() {
     counter.set(0);
@@ -122,8 +141,8 @@ public class ClubController {
     matches.clear();
 
     try {
-      matches.addAll(Arrays.asList((Match[]) getFromUrl("https://api.openligadb.de/getmatchdata/bl1/2021", Match[].class)));
-      clubs.addClubs(Arrays.asList((Club[]) getFromUrl("https://api.openligadb.de/getavailableteams/bl1/2021", Club[].class)));
+      matches.addAll(Arrays.asList((Match[]) getFromUrl("https://api.openligadb.de/getmatchdata/bl1/2022", Match[].class)));
+      clubs.addClubs(Arrays.asList((Club[]) getFromUrl("https://api.openligadb.de/getavailableteams/bl1/2022", Club[].class)));
       for (Club club : clubs.getClubs()) {
         long id = club.getTeamId();
         if (id >= counter.get()) {
@@ -136,6 +155,7 @@ public class ClubController {
       table.sortEntries();
       System.out.println(table);
 
+      getSeasons();
       return getCurrentTable();
     } catch (IOException e) {
       return new ResponseEntity<>(new ArrayList<>(), INTERNAL_SERVER_ERROR);
@@ -152,12 +172,12 @@ public class ClubController {
 
   @SuppressWarnings("rawtypes")
   @RequestMapping("/setMatch")
-  public ResponseEntity<ArrayList<ClubPlace>> setMatch(@RequestParam String home, @RequestParam String away) {
+  public ResponseEntity<ArrayList<ClubPlace>> setMatch(@RequestParam String home, @RequestParam String away, @RequestParam int goalsHome, @RequestParam int goalsAway) {
     Optional<Match> first = matches.stream().filter(m -> m.getTeam1().getTeamName().equals(home) && m.getTeam2().getTeamName().equals(away)).findFirst();
-    if (!first.isPresent())
+    if (first.isEmpty())
       return new ResponseEntity<>(NOT_FOUND);
     Match match = first.get();
-    MatchResult matchResult = new MatchResult(2, "Endergebnis", 2, 0, 0, 0, "");
+    MatchResult matchResult = new MatchResult(2, "Endergebnis", goalsHome, goalsAway, 0, 0, "");
     MatchResult[] matchResults = new MatchResult[]{matchResult};
     match.setMatchResults(matchResults);
     table.calcFromMatches(matches);
@@ -204,7 +224,7 @@ public class ClubController {
 
         clubPlaces.merge(index, 1, Integer::sum);
         if (i % 1000 == 0) {
-          currentRandomCount.set(i);
+          Objects.requireNonNull(currentRandomCount).set(i);
         }
 
       }
