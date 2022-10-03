@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {catchError, Observable, of, tap} from "rxjs";
+import {catchError, concatMap, filter, from, Observable, of, tap} from "rxjs";
 import {Club} from "../club/club";
 import {HttpClient} from "@angular/common/http";
 import {TableEntry} from "../tableEntry/tableEntry";
@@ -31,12 +31,14 @@ export class ClubService {
       ));
   }
 
-  getSeasons(): Observable<Season[]> {
+  getSeasons(): Observable<Season> {
     console.log('ClubService: fetching seasons');
-    return this.http.get<Season[]>(this.apiUrl + '/getSeasons').pipe(
-      tap((_ => console.log('fetched seasons'))),
-      catchError(this.handleError<Season[]>('getSeasons', []))
-    );
+    let observable = this.http.get<Season[]>(this.apiUrl + '/getSeasons').pipe(
+      concatMap(seasons => from(seasons)),
+      catchError(this.handleError<Season>('getSeasons')
+      ));
+
+    return observable;
   }
 
   getProbabilities(): Observable<ClubPlace[]> {

@@ -3,6 +3,8 @@ import {Club} from '../club/club';
 import {ClubService} from "./club.service";
 import {TableEntry} from "../tableEntry/tableEntry";
 import {ClubPlace} from "../probability/clubPlace";
+import {filter, tap} from "rxjs";
+import {Season} from "../club/Season";
 
 @Component({
   selector: 'app-clubs',
@@ -24,9 +26,12 @@ export class ClubsComponent implements OnInit {
     this.clubService.populateList().subscribe(fetchedTableEntries => {
       console.log(fetchedTableEntries);
       this.tableEntries = fetchedTableEntries;
-      this.clubService.getSeasons().subscribe(fetchedSeasons => {
-        console.log(fetchedSeasons)
-      });
+      let observable = this.clubService.getSeasons().pipe(
+        tap(val => console.log("candidate" + val.leagueSeason)),
+        filter(val => val.leagueSeason.startsWith("202"))
+      );
+
+      const subscribe = observable.subscribe(val => console.log("selected: " + val.leagueSeason));
       this.clubService.getClubs().subscribe(fetchedClubs => {
         this.clubs = fetchedClubs;
 
