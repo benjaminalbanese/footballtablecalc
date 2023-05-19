@@ -3,7 +3,7 @@ import {Club} from '../club/club';
 import {ClubService} from "./club.service";
 import {TableEntry} from "../tableEntry/tableEntry";
 import {ClubPlace} from "../probability/clubPlace";
-import {filter, tap} from "rxjs";
+import {filter, tap, reduce, from, map, distinct} from "rxjs";
 
 @Component({
   selector: 'app-clubs',
@@ -18,6 +18,32 @@ export class ClubsComponent implements OnInit {
 
 
   constructor(private clubService: ClubService) {
+  }
+
+  doStuff(filteredClub: string, fetchedClubPlaces: ClubPlace[]): void {
+    let teams = from (fetchedClubPlaces);
+    const ersteLiga = teams.pipe(
+      filter((team) => team.club === filteredClub),
+      filter((team) => team.place <= 15),
+      map((club) => club.count),
+      reduce((total, actual) => total + actual, 0)
+    );
+    const relegation = teams.pipe(
+      filter((team) => team.club === filteredClub),
+      filter((team) => team.place === 16),
+      map((club) => club.count),
+      reduce((total, actual) => total + actual, 0)
+    );
+    const abstieg = teams.pipe(
+      filter((team) => team.club === filteredClub),
+      filter((team) => team.place >= 17),
+      map((club) => club.count),
+      reduce((total, actual) => total + actual, 0)
+    );
+    console.log(filteredClub);
+    ersteLiga.subscribe((x) => console.log('erste Liga ' + x / 1000));
+    relegation.subscribe((x) => console.log('Relegation ' + x / 1000));
+    abstieg.subscribe((x) => console.log('Abstieg ' + x / 1000));
   }
 
   ngOnInit(): void {
@@ -37,13 +63,21 @@ export class ClubsComponent implements OnInit {
         console.log(fetchedClubs)
         this.clubService.getProbabilities().subscribe(fetchedProbabilities => {
           this.probabilities = fetchedProbabilities;
-          fetchedProbabilities.sort((a, b) => {
-            if (a.place - b.place != 0)
-              return a.place - b.place;
-            else
-              return b.count - a.count;
-          });
-          console.log(fetchedProbabilities);
+          // fetchedProbabilities.sort((a, b) => {
+          //   if (a.place - b.place != 0)
+          //     return a.place - b.place;
+          //   else
+          //     return b.count - a.count;
+          // });
+          // console.log(fetchedProbabilities);
+
+          const clubList = from(this.probabilities).pipe(
+            filter((team) => team.place >= 16),
+            map((team) => team.club),
+            distinct()
+          );
+          clubList.subscribe((team) => this.doStuff(team, this.probabilities));
+
         });
       });
     })
