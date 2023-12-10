@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "football-table-calc"
+  "defaultProject": "football-table-calc",
+  "cli": {
+    "analytics": false
+  }
 }
