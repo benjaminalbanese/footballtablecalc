@@ -141,8 +141,8 @@ public class ClubController {
     matches.clear();
 
     try {
-      matches.addAll(Arrays.asList((Match[]) getFromUrl("https://api.openligadb.de/getmatchdata/bl1/2022", Match[].class)));
-      clubs.addClubs(Arrays.asList((Club[]) getFromUrl("https://api.openligadb.de/getavailableteams/bl1/2022", Club[].class)));
+      matches.addAll(Arrays.asList((Match[]) getFromUrl("https://api.openligadb.de/getmatchdata/bl1/2023", Match[].class)));
+      clubs.addClubs(Arrays.asList((Club[]) getFromUrl("https://api.openligadb.de/getavailableteams/bl1/2023", Club[].class)));
       for (Club club : clubs.getClubs()) {
         long id = club.getTeamId();
         if (id >= counter.get()) {
