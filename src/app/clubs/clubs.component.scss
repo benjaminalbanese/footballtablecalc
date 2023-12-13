@@ -24,6 +24,23 @@ div.tableEntry>div{
 
 }
 
+div.bigTableEntry{
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 10px;
+}
+
+div.bigTableEntry>div:first-child{
+  min-width: 220px;
+  justify-content: left;
+}
+
+div.bigTableEntry>div{
+  display: flex;
+  min-width: 80px;
+  justify-content: right;
+}
+
 .probabilities{
   display: flex;
   column-gap: 30px;

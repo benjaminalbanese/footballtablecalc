@@ -7,17 +7,31 @@
 </div>
 <h3>Table</h3>
 <div class="leagueTable">
-  <div class="tableEntry" *ngFor="let tableEentry of tableEntries">
-    <div style="order:1">{{tableEentry.club.shortName}}</div>
-    <div style="order:2">{{tableEentry.scored}}</div>
-    <div style="order:3">{{tableEentry.received}}</div>
-    <div style="order:4">{{tableEentry.points}}</div>
+  <div class="tableEntry" *ngFor="let tableEntry of tableEntries">
+    <div style="order:1">{{tableEntry.club.shortName}}</div>
+    <div style="order:2">{{tableEntry.scored}}</div>
+    <div style="order:3">{{tableEntry.received}}</div>
+    <div style="order:4">{{tableEntry.points}}</div>
   </div>
 </div>
-<h3>Probabilites</h3>
-<div class="probabilities" *ngFor="let probability of probabilities">
-  <span style="order: 1">{{probability.club}}</span>
-  <span style="order: 1">{{probability.place}}</span>
-  <span style="order: 1">{{probability.count}}</span>
+<h3>Probabilities</h3>
+<div class="bigTableEntry">
+  <div style="order: 1">Vereinsname</div>
+  <div style="order: 1">Meister</div>
+  <div style="order: 1">C. League</div>
+  <div style="order: 1">europäisch</div>
+  <div style="order: 1">Platz 7</div>
+  <div style="order: 1">Mittelfeld</div>
+  <div style="order: 1">Relegation</div>
+  <div style="order: 1">2. Liga</div>
 </div>
-
+<div class="bigTableEntry" *ngFor="let competition of competitions">
+  <div style="order: 1">{{competition.club.teamName}}</div>
+  <div style="order: 1">{{competition.champion}}</div>
+  <div style="order: 1">{{competition.championsLeague}}</div>
+  <div style="order: 1">{{competition.optionalEuropean}}</div>
+  <div style="order: 1">{{competition.european}}</div>
+  <div style="order: 1">{{competition.midfield}}</div>
+  <div style="order: 1">{{competition.relegation}}</div>
+  <div style="order: 1">{{competition.secondLeague}}</div>
+</div>
