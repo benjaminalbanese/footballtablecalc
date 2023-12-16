@@ -41,19 +41,19 @@ export class ClubsComponent implements OnInit {
               this.categorizeIntoCompetitions(fetchedClub, prob);
             });
           }
-          this.sortCategorizedTables(fetchedProbabilities);
+          this.sortCategorizedTables();
         });
       });
     })
   }
 
-  private sortCategorizedTables(fetchedProbabilities: ClubPlace[]) {
+  private sortCategorizedTables() {
     this.competitions.sort((compA, compB) =>{
       let {teamName: teamA} = compA.club;
       let teamB = compB.club.teamName;
 
-      let indexA = fetchedProbabilities.findIndex(clubPlace => clubPlace.club === teamA);
-      let indexB = fetchedProbabilities.findIndex(clubPlace => clubPlace.club === teamB);
+      let indexA = this.tableEntries.findIndex(clubPlace => clubPlace.club.teamName === teamA);
+      let indexB = this.tableEntries.findIndex(clubPlace => clubPlace.club.teamName === teamB);
 
       return indexA-indexB;
     })
